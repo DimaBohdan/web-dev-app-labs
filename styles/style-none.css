@@ -12,39 +12,40 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-areas: 
-    "header header header"
-    "menu content sidebar"
-    "menu content sidebar"
-    "menu footer footer";
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto 1fr auto;
+  width: 100%;
   min-height: 100vh;
 }
 
 .header {
-  grid-area: header;
   background: #1a1a1a;
   padding: 20px;
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.title img {
+  vertical-align: middle;
+  margin-right: 15px;
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  margin-left: 5%;
-  gap: 15px;
+  color: white;
   font-size: 32px;
   font-weight: bold;
-  color: white;
   text-transform: uppercase;
 }
 
+.main {
+  overflow: hidden;
+}
+
 .menu {
-  grid-area: menu;
+  float: left;
+  width: 25%;
   background: #1f1f1f;
   padding: 30px 20px;
   border-right: 2px solid #2a2a2a;
+  min-height: 100%;
 }
 
 .menu ul {
@@ -69,7 +70,8 @@ body {
 }
 
 .content {
-  grid-area: content;
+  float: left;
+  width: 50%;
   padding: 30px;
 }
 
@@ -85,13 +87,13 @@ body {
 }
 
 .posters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  text-align: center;
 }
 
 .poster {
+  display: inline-block;
   width: 180px;
+  margin: 10px;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
@@ -104,15 +106,15 @@ body {
 }
 
 .sidebar {
-  grid-area: sidebar;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  float: right;
+  width: 25%;
 }
 
 .sidebar-top, .sidebar-bottom {
   background: #1f1f1f;
   padding: 20px;
   border-left: 2px solid #2a2a2a;
+  margin-bottom: 15px;
 }
 
 .sidebar h3 {
@@ -122,13 +124,17 @@ body {
 }
 
 .footer {
-  grid-area: footer;
+  clear: both;
   background: #1a1a1a;
   padding: 15px;
   font-size: 14px;
   font-style: italic;
   color: #777;
   border-top: 2px solid #2a2a2a;
+  text-align: left;
+  margin-left: 25%;
+  margin-top: 20px;
+  position: relative;
 }
 
 .footer p {
