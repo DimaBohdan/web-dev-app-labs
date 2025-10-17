@@ -217,23 +217,3 @@ body {
     text-align: center;
   }
 }
-
-@media (max-width: 480px) {
-  .poster {
-    width: 100%;
-    max-width: 250px;
-  }
-
-  .menu a {
-    display: block;
-    padding: 8px 0;
-  }
-
-  .content h2 {
-    font-size: 22px;
-  }
-
-  .sidebar h3 {
-    font-size: 18px;
-  }
-}
