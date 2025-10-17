@@ -143,3 +143,97 @@ body {
 .content, .menu, .sidebar, .header, .footer {
   animation: fadeIn 0.8s ease;
 }
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-areas:
+      "header header"
+      "menu content"
+      "menu sidebar"
+      "footer footer";
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .menu {
+    padding: 20px 15px;
+  }
+
+  .poster {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "menu"
+      "content"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .menu {
+    border-right: none;
+    border-bottom: 2px solid #2a2a2a;
+    text-align: center;
+  }
+
+  .menu a {
+    font-size: 18px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .posters {
+    justify-content: center;
+  }
+
+  .poster {
+    width: 120px;
+  }
+
+  .sidebar {
+    border-left: none;
+    grid-template-rows: auto;
+  }
+
+  .sidebar-top, .sidebar-bottom {
+    border-top: 2px solid #2a2a2a;
+    border-left: none;
+  }
+
+  .footer p {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .menu a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .content h2 {
+    font-size: 22px;
+  }
+
+  .sidebar h3 {
+    font-size: 18px;
+  }
+}
