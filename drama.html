@@ -23,7 +23,8 @@
         <li><a href="scifi.html">Sci-Fi</a></li>
         <li><a href="criminal.html">Criminal</a></li>
       </ul>
-      <select class="menu-mobile" onchange="location = this.value;">
+      <select class="menu-mobile" onchange="if(this.value) location = this.value;">
+        <option value="">-- Navigate to --</option>
         <option value="index.html">Main page</option>
         <option value="drama.html" selected>Drama</option>
         <option value="comedy.html">Comedy</option>
