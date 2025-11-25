@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Best TV Serials</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <img src ="images/icon.png" width="80">
+        The Best TV Series
+      </div>
+    </div>
+
+    <aside class="menu">
+      <ul>
+        <li><a href="index.html">Main page</a></li>
+        <li><a href="drama.html">Drama</a></li>
+        <li><a href="comedy.html">Comedy</a></li>
+        <li><a href="scifi.html">Sci-Fi</a></li>
+        <li><a href="criminal.html">Criminal</a></li>
+      </ul>
+      <select class="menu-mobile" onchange="if(this.value) location = this.value;">
+        <option value="">-- Navigate to --</option>
+        <option value="index.html" selected>Main page</option>
+        <option value="drama.html">Drama</option>
+        <option value="comedy.html">Comedy</option>
+        <option value="scifi.html">Sci-Fi</option>
+        <option value="criminal.html">Criminal</option>
+      </select>
+    </aside>
+
+    <div class="content" id="block3">
+      <h2>The Best TV Serials</h2>
+      <p>Welcome to the world of the best TV shows! Here you will find a selection of dramas, comedies, criminals and science fiction that have already become legends. Choose what to watch tonight!</p>
+      
+      <h3>Popular TV series</h3>
+      <div class="posters">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/1280px-Breaking_Bad_logo.svg.png" alt="Breaking Bad" class="poster">
+        <img src="https://upload.wikimedia.org/wikipedia/en/d/d8/Game_of_Thrones_title_card.jpg" alt="Game of Thrones" class="poster">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png" alt="Stranger Things" class="poster">
+        <img src="https://krytykapolityczna.pl/wp-content/uploads/2024/04/Fallout-serial.jpg" alt="Fallout" class="poster">
+        <img src="https://www.tvguide.com/a/img/catalog/provider/2/13/2-ba9d58f66d3abe0c8328986734500074.jpg" alt="Castle Rock" class="poster">
+        <img src="https://imagazine.pl/wp-content/uploads/2016/12/Peaky-Blinders-20-hero.jpg" alt="Peaky Blinders" class="poster">
+        <img src="https://58v76y8z87lo.hellomagazine.com/horizon/landscape/c439e71435ef-parks-and-rec-where-are-they-not-t.jpg" alt="Parks and Recreation" class="poster">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/0376ad72a814d046da42bcd9d1f6757e255446af1eee4a91e78012919deeb731.jpg" alt="Teen Wolf" class="poster">
+      </div>
+      <form id="numsForm">
+        <p>Введіть 10 чисел:</p>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <input type="number" name="nums" required>
+        <button type="submit">Обчислити</button>
+      </form>
+
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-top" id="block4">
+        <h3>Top 5 this week</h3>
+        <ol>
+          <li>Breaking Bad</li>
+          <li>Stranger Things</li>
+          <li>The Crown</li>
+          <li>Friends</li>
+          <li>Dark</li>
+        </ol>
+      </div>
+      <div class="sidebar-bottom" id="block5">
+        <h3>Coming soon</h3>
+        <ul>
+          <li>The Witcher (new season)</li>
+          <li>House of the Dragon</li>
+          <li>Loki Season 2</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Life is better with TV shows © 2025</p>
+    </div>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
