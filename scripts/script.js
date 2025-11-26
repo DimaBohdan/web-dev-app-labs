@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const maxNum = Math.max(...numbers);
       const countMax = numbers.filter(n => n === maxNum).length;
-      document.cookie = `maxCount=${countMax}; path=/;`;
+      document.cookie = `maxCount=${countMax}; path=/; SameSite=Lax; Secure`;
       alert(`Кількість максимальних чисел: ${countMax}`);
       location.reload();
     });
