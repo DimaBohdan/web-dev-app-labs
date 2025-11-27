@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   const blocks = [...document.querySelectorAll("#block1, #block2, #block3, #block4, #block5, #block6")];
-  localStorage.removeItem("savedLists");
   blocks.forEach(block => {
     block.addEventListener("dblclick", () => openListEditor(block));
   });
@@ -111,11 +110,12 @@ function openListEditor(block) {
     block.innerHTML = "";
     const newUl = document.createElement("ul");
     items.forEach(text => {
-      const li = document.createElement("li");
-      li.textContent = text;
-      newUl.appendChild(li);
+        const li = document.createElement("li");
+        li.textContent = text;
+        newUl.appendChild(li);
     });
     block.appendChild(newUl);
+    block.addEventListener("dblclick", () => openListEditor(block));
   };
   wrapper.appendChild(input);
   wrapper.appendChild(addBtn);
