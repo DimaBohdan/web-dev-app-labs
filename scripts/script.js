@@ -63,4 +63,63 @@ document.addEventListener("DOMContentLoaded", function () {
       location.reload();
     });
   }
+  const blocks = [...document.querySelectorAll("#block1, #block2, #block3, #block4, #block5, #block6")];
+  localStorage.removeItem("savedLists");
+  blocks.forEach(block => {
+    block.addEventListener("dblclick", () => openListEditor(block));
+  });
 });
+
+window.addEventListener("load", () => {
+  const block3 = document.getElementById("block3");
+  const picker = document.getElementById("colorPicker");
+  const savedColor = localStorage.getItem("block3Color");
+  if (savedColor) {
+    block3.style.color = savedColor;
+    picker.value = savedColor;
+  }
+  picker.addEventListener("input", () => {
+    const color = picker.value;
+    block3.style.color = color;
+    localStorage.setItem("block3Color", color);
+  });
+});
+
+function openListEditor(block) {
+  block.innerHTML = "";
+  const wrapper = document.createElement("div");
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Ввести пункт списку";
+  const addBtn = document.createElement("button");
+  addBtn.textContent = "Додати";
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Зберегти список";
+  const ul = document.createElement("ul");
+  addBtn.onclick = () => {
+    if (input.value.trim() === "") return;
+    const li = document.createElement("li");
+    li.textContent = input.value;
+    ul.appendChild(li);
+    input.value = "";
+  };
+  saveBtn.onclick = () => {
+    const items = [...ul.querySelectorAll("li")].map(li => li.textContent);
+    let saved = JSON.parse(localStorage.getItem("savedLists") || "{}");
+    saved[block.id] = items;
+    localStorage.setItem("savedLists", JSON.stringify(saved));
+    block.innerHTML = "";
+    const newUl = document.createElement("ul");
+    items.forEach(text => {
+      const li = document.createElement("li");
+      li.textContent = text;
+      newUl.appendChild(li);
+    });
+    block.appendChild(newUl);
+  };
+  wrapper.appendChild(input);
+  wrapper.appendChild(addBtn);
+  wrapper.appendChild(saveBtn);
+  wrapper.appendChild(ul);
+  block.appendChild(wrapper);
+}
